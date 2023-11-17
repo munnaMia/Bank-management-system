@@ -11,10 +11,12 @@ Objects :
 Person:
     >> name
     >> contact 
-    >> Address
-        > Country
-        > City
-        > Location
+        >> Phone
+        >> Email
+        >> Address
+            > Country
+            > City
+            > Location
     >> Blood
 
 
@@ -32,9 +34,7 @@ Employe :
 
 Department:
     >> Dep name
-    >> Place to work
-    >> Emp data 
+    >> Shift
     
 Payment :
-    >> add Balance
-    >> Update Balance
+    >> Balance

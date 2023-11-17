@@ -1,0 +1,40 @@
+A Bank management system where account can create manage, store payment data, manage employe and user data.
+
+Objects :
+    > Person
+    > Employe
+    > Client
+    > Payment 
+    > Department
+    
+
+Person:
+    >> name
+    >> contact 
+    >> Address
+        > Country
+        > City
+        > Location
+    >> Blood
+
+
+Client :
+    >> id
+    >> account active/deactive
+    >> Balance
+
+
+Employe :
+    >> emp id
+    >> Salary
+    >> Department
+
+
+Department:
+    >> Dep name
+    >> Place to work
+    >> Emp data 
+    
+Payment :
+    >> add Balance
+    >> Update Balance

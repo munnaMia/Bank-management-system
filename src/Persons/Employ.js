@@ -32,8 +32,10 @@ class Employ extends Person {
     this[_salary] = value;
   }
 
-  toString(){
-    return `Employ ID:${this[_empId]}, ${super.toString()}, Department:${this[_department]}, Salary:${this[_salary]}`
+  toString() {
+    return `Employ ID:${this[_empId]}, ${super.toString()}, Department:${
+      this[_department]
+    }, Salary:${this[_salary]}`;
   }
 }
 

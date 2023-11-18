@@ -6,7 +6,7 @@ class Person {
   constructor(name) {
     this[_name] = name;
     this[_blood] = "";
-    this[_contact] = null || '';
+    this[_contact] = null || "";
   }
 
   get name() {

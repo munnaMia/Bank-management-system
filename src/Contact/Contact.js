@@ -33,7 +33,9 @@ class Contact {
     this[_address] = value;
   }
 
-  toString(){
-    return `Phone no:${this[_phone]}, Email:${this[_email]}, Address:${this[_address]}`
+  toString() {
+    return `Phone no:${this[_phone]}, Email:${this[_email]}, Address:${this[_address]}`;
   }
 }
+
+module.exports = Contact;

@@ -41,6 +41,10 @@ class Department {
     }
   }
 
+  removeEmploy(empID){
+    delete this[_empList][empID]
+  }
+
   toString(){
     return `Department name: ${this[_departName]}, Department ID ${this[_depId]}, Employ list: ${this[_empList]}`
   }

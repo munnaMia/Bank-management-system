@@ -1,12 +1,14 @@
 const _balance = Symbol("Balance");
 const _acountStatus = Symbol("Acount Status");
 const _loan = Symbol("Loan");
-const _loanDetails = {};
+const _loanDetails = Symbol("Loan Data");
+
 class Account {
   constructor(balance, acoSta) {
     this[_balance] = balance;
     this[_acountStatus] = acoSta || true;
     this[_loan] = 0;
+    this[_loanDetails] = {}
   }
 
   get balance() {
@@ -21,13 +23,17 @@ class Account {
     this[_balance] = this[_balance] + value;
   }
 
+  set cutBalance(value) {
+    this[_balance] = this[_balance] - value;
+  }
+
   get loan() {
     return this[_loan];
   }
 
   giveLoan(loanId, value, interest, timeYear) {
     this[_loan] = this[_loan] + value + interest * timeYear;
-    _loanDetails[loanId] = {
+    this[_loanDetails][loanId] = {
       loanAmount: value,
       loanTime: timeYear,
       interest: interest,
@@ -35,15 +41,11 @@ class Account {
   }
 
   get loanAllData() {
-    return _loanDetails;
-  }
-
-  getLoanData(loanID) {
-    console.log(_loanDetails[loanID]);
+    return this[_loanDetails];
   }
 
   updateLoanData(loanId, updateTimeYear, interest, updateAmount) {
-    _loanDetails[loanId] = {
+    this[_loanDetails][loanId] = {
       loanAmount: updateAmount,
       loanTime: updateTimeYear,
       interest: interest,
@@ -51,10 +53,10 @@ class Account {
   }
 
   addLoanPay(loanId, amount, cutTimeYear) {
-    _loanDetails[loanId] = {
-      ..._loanDetails[loanId],
-      loanAmount: _loanDetails[loanId] - amount,
-      loanTime: _loanDetails[loanId] - cutTimeYear,
+    this[_loanDetails][loanId] = {
+      ...this[_loanDetails][loanId],
+      loanAmount: this[_loanDetails][loanId] - amount,
+      loanTime: this[_loanDetails][loanId] - cutTimeYear,
     };
   }
 

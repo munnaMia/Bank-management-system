@@ -3,13 +3,15 @@ const Person = require("./Person");
 const _empId = Symbol("Employ ID");
 const _department = Symbol("Department");
 const _salary = Symbol("Salary");
+const _position = Symbol("Position")
 
 class Employ extends Person {
-  constructor(empId, name) {
+  constructor(empId, name, position) {
     super(name);
     this[_empId] = empId;
     this[_department] = null;
     this[_salary] = 0;
+    this[_position] = position
   }
 
   get employId() {
@@ -30,6 +32,14 @@ class Employ extends Person {
 
   set salary(value) {
     this[_salary] = value;
+  }
+
+  get position() {
+    return this[_position];
+  }
+
+  set position(value) {
+    this[_position] = value;
   }
 
   toString() {

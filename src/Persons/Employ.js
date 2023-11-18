@@ -33,7 +33,7 @@ class Employ extends Person {
   }
 
   toString(){
-    return `Employ ID:${this[_empId]} Department:${this[_department]} Salary:${this[_salary]}`
+    return `Employ ID:${this[_empId]}, ${super.toString()}, Department:${this[_department]}, Salary:${this[_salary]}`
   }
 }
 

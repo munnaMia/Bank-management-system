@@ -65,7 +65,7 @@ class Account {
   }
 
   set accountStatus(value) {
-    if (value) {
+    if (value === true || value === false) {
       this[_acountStatus] = value;
     } else {
       console.log("Enter true or false please");
